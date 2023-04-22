@@ -1,0 +1,26 @@
+The code defines a simple List component using React. It consists of two sub-components: 
+WrappedSingleListItem and WrappedListComponent.
+WrappedSingleListItem is responsible for rendering each individual list item, 
+while WrappedListComponent renders the entire list by mapping over an array of items and rendering 
+WrappedSingleListItem for each of them.
+
+The WrappedSingleListItem component receives four props:
+
+1)- index: a number representing the index of the item in the list
+2)- isSelected: a boolean indicating whether the item is selected or not
+3)- onClickHandler: a function that handles the click event on the item
+4)- text: a string representing the text content of the item
+
+It renders an <li> element with a background color of green if isSelected is true and red if isSelected is false.
+It also attaches an onClick event handler that calls onClickHandler with the index of the item.
+
+The WrappedListComponent receives one prop:
+
+1)- items: an array of objects, each with a "text" property representing the text content of the list item
+
+It uses the useState hook to maintain the selected index state and useEffect hook to reset the selected
+index whenever the items prop changes. It also defines a handleClick function that sets the selected index 
+when a list item is clicked.
+It renders a <ul> element with a textAlign style of left, and maps over the items array to render a SingleListItem
+component for each item. It passes in the necessary props to the SingleListItem component:
+onClickHandler, text, index, and isSelected.
